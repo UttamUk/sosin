@@ -1,0 +1,272 @@
+/* By Uk */
+@import 'mixin';
+@import 'fonts';
+@import 'colors';
+
+html{scroll-behavior:smooth}
+
+
+//BACKGROUND COLORS
+$bgc: linear-gradient(203deg, #000000 0%, #20232C 34%, #20232C 64%, #000000 100%);
+$bgc1: #141935;
+
+// TEXT COLORS
+$header-txt: linear-gradient(90deg, #D4AA2A 0%, #F9EF7C 41%, #D4AA2A 100%);
+$txt: linear-gradient(82deg, #D4AA2A 0%, #F9EF7C 63%, #D4AA2A 100%);
+
+$btn-bg: linear-gradient(81deg, #875C0D 0%, #F9EF7C 49%, #D4AA2A 100%);
+
+// choose
+$choose-txt: linear-gradient(89deg, #D4AA2A 0%, #F9EF7C 52%, #D4AA2A 100%);
+
+// how it works
+$how-txt: linear-gradient(90deg, #875C0D 0%, #F9EF7C 54%, #D4AA2A 100%);
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: OpenSans-Regular;
+    // background: $body;
+    // background-color: #000000;
+}
+
+
+
+/*-------------------------Header part------------------------------*/
+// .navbar .collapsing.show,
+// .navbar .navbar-collapse.show
+// {
+//     background-color: #010230;
+// }
+
+
+header{
+    width: 100%;
+    // height: auto;
+    // position: sticky;
+    // top: 0;
+    // background-color: #fff;
+    z-index: 999;
+    padding: 0;
+    margin: 0;
+    .navbar{
+        font-weight: 100;
+        padding: 1% 6%;
+        height: auto;
+        top: 1%;
+        @include xsm{
+            padding: 3% 2.5%;
+            top: 0;
+        }
+        @include sm{
+            padding: 3% 2.5%;
+            top: 0;
+        }
+        @include md{
+            padding: 3% 2.5%;
+            top: 0;
+        }
+        &.blackto{
+            background-color: #ffffff;
+            box-shadow: 0px 2px 10px rgba(12, 12, 12, 0.145);
+            top: 0;
+            transition: all 300ms linear;
+            .navbar-brand{
+                img{
+                    width: 55px;
+                    transition: all 300ms linear;
+                }
+                .media-body{
+                    margin-left: -8px;
+                }
+                h4{
+                    margin-top: 3px;
+                    font-size: 27px;
+                }
+            }
+        }
+        .navbar-toggler{
+            outline: none;
+        }
+        .navbar-brand{
+            padding: 0;
+            font-size: initial;
+            img{
+                width: 100px;
+                @include xsm{
+                    width: 100px;
+                }
+            }
+            .media-body{
+                margin-left: -14px;
+            }
+            h4 {
+                color: #000000;
+                font-weight: bold;
+                font-size: 32px;
+                margin-bottom: 0;
+                margin-top: 26px;
+            }
+            .logo-subname{
+                line-height: 0.1;
+                font-size: 11px;
+                margin-bottom: 0;
+                margin-left: 6px;
+            }
+        }
+        .custom-navbar-nav{
+            position: relative;
+            // flex-direction: row !important;
+            // padding-right: 2%;
+            .nav-item{
+                .nav-link{
+                    padding: 0.5rem 1.5rem;
+                    color: $header_links; 
+                    font-size: 16px;  
+                    font-family: OpenSans-SemiBold;
+                    // letter-spacing: 2px; 
+                    &:hover{
+                        columns: #000000;;
+                    }
+                    @include xsm{
+                        padding: .5rem .5rem;
+                    } 
+                    &.header-link{
+                        font-family: OpenSans-ExBold;
+                    }              
+                }
+            }
+        }
+    }
+}
+
+// .navbar.blackto{
+//     background-color: #20232C;
+//     box-shadow: 0px 2px 10px rgba(12, 12, 12, 0.5);
+//     top: 0;
+//     transition: all 300ms linear;
+// }
+
+
+// .logo{
+//     background: $txt;
+//     -webkit-background-clip: text;
+//     -webkit-text-fill-color: transparent;
+// }
+
+
+// =====================================home
+.home{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: transparent;
+    padding: 9% 6% 6% 6%;
+    display: flex;
+    flex-direction: column;
+    @include xsm{
+        height: auto;
+    }
+    @include sm{
+        height: auto;
+    }
+    @include md{
+        padding: 19% 6% 6% 6%;
+        height: auto;
+    }
+    .my-auto {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .home-content{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        // align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        .home-title{
+            font-family: OpenSans-Semibold;
+            font-size: 40px;
+            margin-bottom: 4%;
+            color: $header_links;
+            @include xsm{
+                font-size: 22px;
+            }
+            @include sm{
+                font-size: 30px;
+            }
+            @include md{
+                font-size: 35px;
+            }
+        }
+        .home-subtitle{
+            font-family: OpenSans-Regular;
+            font-size: 18px;
+            color: $header_links;
+            margin-bottom: 4%;
+            @include xsm{
+                margin-top: 16%;
+                font-size: 16px;
+            }
+            @include sm{
+                margin-top: 12%;
+                font-size: 16px;
+            }
+            // @include md{
+            //     // margin-top: 12%;
+            //     font-size: 28px;
+            // }
+        }
+        .home-btn{
+            width: 150px;
+            height: 42px;
+            background-color: #5D74EA;
+            font-family: OpenSans-Bold;
+            outline: none;            
+            color: #ffffff;
+            border: 0;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: all 350ms ease;
+            &:hover{
+                transform: scale(1.08);
+                border-radius: 0px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.315);
+            }
+            @include xsm{
+                height: 34px;
+                margin-bottom: 9%;
+            }
+            @include sm{
+                height: 34px;
+                margin-bottom: 9%;
+            }
+        }
+    }
+    .home-img{
+        width: 160%;
+        height: auto;
+        @include xsm{
+            text-align: center;
+        }
+        @include sm{
+            text-align: center;
+        }
+        @include md{
+            text-align: center;
+        }
+        img{
+            width: 70%;
+            // animation: ror 15s linear infinite both;
+            @include md{
+                width: 90%;
+            }
+        }
+    }
+}
+
