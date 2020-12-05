@@ -156,6 +156,30 @@ $(document).ready(function () {
 			}
 		}
 	});
+	$('#university').owlCarousel({
+		loop: false,
+		margin: 10,
+		nav: true,
+		// rewind: true,
+		dots: true,
+		navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
+		autoplay: false,
+		// autoplaySpeed: 100,
+		// autoPlay: 20000,
+		// center:true,
+		responsive: {
+
+			0: {
+				items: 1
+			},
+			600: {
+				items: 1
+			},
+			1000: {
+				items: 1
+			}
+		}
+	});
 });
 
 

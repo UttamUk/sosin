@@ -1,0 +1,487 @@
+/* By Uk */
+@import 'mixin';
+@import 'fonts';
+@import 'colors';
+
+html{scroll-behavior:smooth}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+    font-family: OpenSans-Regular;
+    // background-color: black;
+}
+
+
+// .navbar .collapsing.show,
+// .navbar .navbar-collapse.show
+// {
+//     background-color: #010230;
+// }
+
+// ==================GLOBAL
+
+.title{
+    font-family: OpenSans-SemiBold;
+    font-size: 40px;
+    text-align: center;
+    @include xsm{
+        font-size: 24px;
+    }
+    @include sm{
+        font-size: 32px;
+    }
+}
+.subtitle{
+    font-size: 14px;
+    text-align: center;
+    width: 90%;
+}
+.btn{
+    width: 150px;
+    height: 42px;
+    background-color: #5D74EA;
+    font-family: OpenSans-Bold;
+    font-size: 14px;
+    outline: none;            
+    color: #ffffff;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 350ms ease;
+    &:hover{
+        transform: scale(1.08);
+        border-radius: 0px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.315);
+    }
+}
+
+
+.top-dot{
+    background-color: #DAE0FB;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: -10%;
+    top: -20%;
+}
+.circle{
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 4px solid #D8DEFA;
+    position: absolute;
+    top: 65%;
+    left: -7%;
+    z-index: -1;
+    @include xsm{
+     width: 300px;   
+     height: 300px;
+     top: 29%;
+     left: -30%;
+    }
+}
+.circle2{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 4px solid #D8DEFA;
+    position: absolute;
+    left: -80px;
+    bottom: -25%;
+    z-index: -1;
+
+}
+.dot{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #DFF6B7;
+    position: absolute;
+    right: 13%;
+    top: -12%;
+}
+.dot2{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #D8DEFA;
+    position: absolute;
+    left: 5%;
+    top: 60%;
+}
+
+.large-dot{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: #DFF6B7;
+    position: absolute;
+    left: 30%;
+    top: 7%;
+    z-index: -1;
+}
+
+/*============================Course page*/ 
+
+.course-banner{
+    width: 100%;
+    height: 90vh;
+    position: relative;
+    background-image: url('../images/course/course-banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 6% 0% 6% 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 300ms linear;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90.32deg, #000000 0%, rgba(196, 196, 196, 0) 100%);
+    }
+    @include xsm{
+        height: auto;
+        padding: 6% 1% 6% 1%;
+    }
+    @include sm{
+        height: auto;
+        padding: 6% 6% 6% 6%;
+    }
+    @include md{
+        padding: 6% 6% 6% 6%;
+        height: auto;
+    }    
+    .course-banner-title{
+        font-family: OpenSans-Semibold;
+        font-size: 40px;
+        margin-bottom: 0%;
+        color: #ffffff;
+    }
+}
+
+.program{
+    padding: 5% 0%;
+    position: relative;
+    width: 100%;
+    height: auto;
+    .program-title{
+        font-family: OpenSans-Semibold;
+        font-size: 32px;
+        margin-bottom: 5%;
+        color: rgba(59, 59, 59, 0.98);
+    }
+    .program-title-btn{
+        @extend .btn;
+        background-color: transparent;
+        border: 1px solid #5D74EA;
+        color: #5D74EA;
+    }
+    .program-content{
+        font-size: 14px;
+        margin-bottom: 8%;
+        color: rgba(59, 59, 59, 0.98);
+        line-height: 1.8;
+    }
+    .program-box{
+        width: 90%;
+        background-color: #ffffff;
+        padding: 16px;
+        border-radius: 8px;
+        border: 1px solid #DBDBDB;
+        margin-bottom: 10%;
+        box-shadow: 0px 3px 18px rgba(59, 59, 59, 0.1);
+        .program-box-top{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            .fee{
+                color: rgba(59, 59, 59, 0.98);
+                font-size: 12px;
+                margin: 3px 0px;
+            }
+            .cost{
+                color: #5D74EA;
+                font-family: OpenSans-Semibold;
+                margin: 3px 0px;
+            }
+        }
+        .program-list{
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 18px;
+            li{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 10px;  
+                span{
+                    color: rgba(59, 59, 59, 0.98);
+                    font-size: 12px;
+                    &:nth-child(2){
+                        color: rgba(59, 59, 59, 0.98);
+                        font-family: OpenSans-Semibold;
+                    }
+                }              
+            }
+        }
+        .program-btn{
+            @extend .btn;
+            margin: 7px 0px;
+            width: auto;
+            font-size: 12px;
+            padding: 0px 16px;
+            background-color: #5D74EA;
+            box-shadow: 0px 3px 26px rgba(93, 116, 234, 0.28);
+        }
+        .program-footer{
+            color: rgba(59, 59, 59, 0.64);
+            font-size: 12px;
+            text-align: center;
+        }
+        .program-img{
+            text-align: center;
+            margin-bottom: 12px;
+            img{
+                width: 180px;
+                height: auto;
+            }
+        }
+        .program-name{
+            color: rgba(59, 59, 59, 0.98);
+            font-family: OpenSans-Semibold;
+            text-align: center;
+            margin-top: 30px;
+            margin: 0;
+        }
+        .program-desg{
+            color: rgba(59, 59, 59, 0.64);
+            font-size: 12px;
+            text-align: center;
+        }
+        .program-info{
+            color: rgba(59, 59, 59, 0.64);
+            font-size: 12px;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+    }
+}
+
+
+.curriculum{
+    position: relative;
+    width: 100%;
+    margin-top: 4%;
+    .card{
+        border: 0px;
+        // border: 1px solid #5D74EA;
+        border-radius: 0px;
+        padding: 0;
+        // background-color: transparent;
+        margin-bottom: 15px;
+        .card-header{
+            padding: 0;
+            .btn-link{
+                background-color: #5D74EA;
+                border: 0px;
+                outline: none;
+                display: block;
+                width: 100%;
+                padding: 18px 18px;
+                font-family: OpenSans-SemiBold;
+                font-size: 17px;
+                color: #ffffff;
+                text-align: left;
+                text-decoration: none;
+                position: relative;
+                white-space: normal;
+                cursor: pointer;
+                @include xsm{
+                    font-size: 14px;
+                }
+                @include sm{
+                    font-size: 16px;
+                }
+                img{
+                    width: 20px;
+                    position: absolute;
+                    right: 18px;
+                    top: 28px;
+                    transition: all 400ms ease-in;
+                    transform: rotate(-180deg);
+                }
+                &.collapsed{
+                    img{
+                        transform: rotate(0deg);
+                    }
+                }
+            }
+        }
+        .card-body{
+            padding: 0;
+            color: rgba(59, 59, 59, 0.8);
+            font-family: OpenSans-Regular;
+            font-size: 14px;
+            padding: 18px;
+            border: 1px solid #5D74EA;
+            @include xsm{
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.curriculum-img{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+}
+
+/*============================Course page*/ 
+.allcourse{
+    padding: 6% 0%;
+    position: relative;
+    .allcourse-top{
+        margin: 2% 0%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .allcourse-title{
+            font-family: OpenSans-Semibold;
+            font-size: 32px;
+            color: rgba(59, 59, 59, 0.98);
+        }
+        .allcourse-subtitle{
+            font-size: 14px;
+            color: rgba(59, 59, 59, 0.98);
+            line-height: 1.8;
+            span{
+                padding: 0px 6px;
+                font-size: 11px;
+                color: #5D74EA;
+                background: rgba(56, 85, 229, 0.06);
+                border-radius: 30px;
+            }
+        }
+    }
+    .course-box{
+        margin-bottom: 10%;
+    }
+}
+.allcourse-box{
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    border-radius: 8px;
+    // overflow: hidden;
+    padding: 10px;
+    margin: 3% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    box-shadow: 0px 3px 18px rgba(59, 59, 59, 0.1);
+    z-index: 9;
+    cursor: pointer;
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        display: block;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.863) 0%, rgba(39, 39, 39, 0.692) 100%);
+        z-index: -1;
+    }
+    .allcourse-box-img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -2;
+        border-radius: 6px;
+    }
+    .programming-btn{
+        border: 0px;
+        border-radius: 20px;
+        padding: 0px 6px;
+        color: #5D74EA;
+        font-size: 11px;
+        cursor: pointer;
+        background: #F4F8EC;
+        font-family: OpenSans-Semibold;
+    }
+    .programming-info{
+        .programming-title{
+            font-family: OpenSans-Semibold;
+            font-size: 16px;
+            color: #ffffff
+            
+        }
+        .programming-profile{
+            display: flex;
+            align-items: center;            
+            img{
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                margin-right: 5px;
+            }
+            .programming-profile-name{
+                font-size: 14px;
+                color: #ffffff;               
+                margin: 0;
+            }
+        }
+    }
+}
+
+.allcourse-filter{
+    margin: 3% 0%;
+    position: relative;
+    .filter-data{
+        display: flex;
+        .filter-title{
+            font-size: 14px;
+            color: #A9A9A9;
+            margin: 0;
+            white-space: nowrap;
+        }
+        .filter-list{
+            padding: 0;
+            margin: 0;
+            li{
+                display: inline-block;
+                margin: 0px 4px;
+                color: #5D74EA;
+                background: rgba(56, 85, 229, 0.06);
+                border-radius: 20px;
+                font-size: 12px;
+                padding: 0px 9px;
+
+            }
+        }
+    }
+}
+
+
+// =====================================
+// =====================================

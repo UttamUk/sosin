@@ -6,23 +6,6 @@
 html{scroll-behavior:smooth}
 
 
-//BACKGROUND COLORS
-$bgc: linear-gradient(203deg, #000000 0%, #20232C 34%, #20232C 64%, #000000 100%);
-$bgc1: #141935;
-
-// TEXT COLORS
-$header-txt: linear-gradient(90deg, #D4AA2A 0%, #F9EF7C 41%, #D4AA2A 100%);
-$txt: linear-gradient(82deg, #D4AA2A 0%, #F9EF7C 63%, #D4AA2A 100%);
-
-$btn-bg: linear-gradient(81deg, #875C0D 0%, #F9EF7C 49%, #D4AA2A 100%);
-
-// choose
-$choose-txt: linear-gradient(89deg, #D4AA2A 0%, #F9EF7C 52%, #D4AA2A 100%);
-
-// how it works
-$how-txt: linear-gradient(90deg, #875C0D 0%, #F9EF7C 54%, #D4AA2A 100%);
-
-
 
 body{
     margin: 0;
@@ -53,7 +36,28 @@ body{
         font-size: 32px;
     }
 }
-
+.subtitle{
+    font-size: 14px;
+    text-align: center;
+    width: 90%;
+}
+.btn{
+    width: 150px;
+    height: 42px;
+    background-color: #5D74EA;
+    font-family: OpenSans-Bold;
+    outline: none;            
+    color: #ffffff;
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 350ms ease;
+    &:hover{
+        transform: scale(1.08);
+        border-radius: 0px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.315);
+    }
+}
 
 header{
     width: 100%;
@@ -64,11 +68,13 @@ header{
     z-index: 999;
     padding: 0;
     margin: 0;
+    transition: all 300ms linear;
     .navbar{
         font-weight: 100;
-        padding: 1% 6%;
+        padding: 1% 11%;
         height: auto;
         top: 1%;
+        transition: all 300ms linear;
         @include xsm{
             padding: 3% 2.5%;
             top: 0;
@@ -84,20 +90,23 @@ header{
         &.blackto{
             background-color: #ffffff;
             box-shadow: 0px 2px 10px rgba(12, 12, 12, 0.145);
+            position: fixed;
             top: 0;
-            transition: all 300ms linear;
+            right: 0;
+            left: 0;
+            z-index: 1030;            
             .navbar-brand{
-                img{
-                    width: 55px;
-                    transition: all 300ms linear;
-                }
-                .media-body{
-                    margin-left: -8px;
-                }
-                h4{
-                    margin-top: 3px;
-                    font-size: 27px;
-                }
+                // img{
+                //     width: 55px;
+                //     transition: all 300ms linear;
+                // }
+                // .media-body{
+                //     margin-left: -8px;
+                // }
+                // h4{
+                //     margin-top: 3px;
+                //     font-size: 27px;
+                // }
             }
         }
         .navbar-toggler{
@@ -106,27 +115,22 @@ header{
         .navbar-brand{
             padding: 0;
             font-size: initial;
-            img{
-                width: 100px;
-                @include xsm{
-                    width: 100px;
+            .logo-media{
+                display: flex;
+                align-items: center;
+                .logo-circle{
+                    background-color: #5D74EA;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                    margin-right: 7px;
                 }
-            }
-            .media-body{
-                margin-left: -14px;
-            }
-            h4 {
-                color: #000000;
-                font-weight: bold;
-                font-size: 32px;
-                margin-bottom: 0;
-                margin-top: 26px;
-            }
-            .logo-subname{
-                line-height: 0.1;
-                font-size: 11px;
-                margin-bottom: 0;
-                margin-left: 6px;
+                .logo-name{
+                    margin: 0;
+                    font-size: 12px;
+                    color: #5D74EA;
+                    font-family: OpenSans-SemiBold;
+                }
             }
         }
         .custom-navbar-nav{
@@ -137,7 +141,7 @@ header{
                 .nav-link{
                     padding: 0.5rem 1.5rem;
                     color: $header_links; 
-                    font-size: 16px;  
+                    font-size: 14px;  
                     font-family: OpenSans-SemiBold;
                     // letter-spacing: 2px; 
                     &:hover{
@@ -147,7 +151,10 @@ header{
                         padding: .5rem .5rem;
                     } 
                     &.header-link{
-                        font-family: OpenSans-ExBold;
+                        // font-family: OpenSans-ExBold;
+                        background-color: rgba(56, 85, 229, 0.06);;
+                        border-radius: 100px;
+                        color: #5D74EA;
                     }              
                 }
             }
@@ -163,31 +170,28 @@ header{
 // }
 
 
-// .logo{
-//     background: $txt;
-//     -webkit-background-clip: text;
-//     -webkit-text-fill-color: transparent;
-// }
-
-
 // =====================================home
 .home{
     width: 100%;
     height: 100vh;
     position: relative;
     background-color: transparent;
-    padding: 9% 6% 6% 6%;
+    padding: 0% 0% 6% 0%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     overflow-x: hidden;
+    transition: all 300ms linear;
     @include xsm{
         height: auto;
+        padding: 6% 6% 6% 6%;
     }
     @include sm{
         height: auto;
+        padding: 6% 6% 6% 6%;
     }
     @include md{
-        padding: 19% 6% 6% 6%;
+        padding: 6% 6% 6% 6%;
         height: auto;
     }
     .my-auto {
@@ -220,7 +224,7 @@ header{
             font-family: OpenSans-Regular;
             font-size: 18px;
             color: $header_links;
-            margin-bottom: 4%;
+            margin-bottom: 8%;
             @include xsm{
                 margin-top: 16%;
                 font-size: 16px;
@@ -235,21 +239,7 @@ header{
             // }
         }
         .home-btn{
-            width: 150px;
-            height: 42px;
-            background-color: #5D74EA;
-            font-family: OpenSans-Bold;
-            outline: none;            
-            color: #ffffff;
-            border: 0;
-            border-radius: 100px;
-            cursor: pointer;
-            transition: all 350ms ease;
-            &:hover{
-                transform: scale(1.08);
-                border-radius: 0px;
-                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.315);
-            }
+            @extend .btn;
             @include xsm{
                 height: 34px;
                 margin-bottom: 9%;
@@ -282,26 +272,87 @@ header{
     }
 }
 
-@keyframes ror{
-    0%{
-        transform:  rotate(0deg) translate(0, 0);
-    }
-    100%{
-        transform:  rotate(360deg) translate(0, 0);
+.top-dot{
+    background-color: #DAE0FB;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: absolute;
+    left: -10%;
+    top: -20%;
+}
+.circle{
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 4px solid #D8DEFA;
+    position: absolute;
+    top: 65%;
+    left: -7%;
+    z-index: -1;
+    @include xsm{
+     width: 300px;   
+     height: 300px;
+     top: 29%;
+     left: -30%;
     }
 }
+.circle2{
+    width: 190px;
+    height: 190px;
+    border-radius: 50%;
+    border: 4px solid #D8DEFA;
+    position: absolute;
+    left: -80px;
+    bottom: -25%;
+    z-index: -1;
 
+}
+.dot{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #DFF6B7;
+    position: absolute;
+    right: 13%;
+    top: -12%;
+}
+.dot2{
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: #D8DEFA;
+    position: absolute;
+    left: 5%;
+    top: 60%;
+}
+
+.large-dot{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background-color: #DFF6B7;
+    position: absolute;
+    left: 30%;
+    top: 7%;
+    z-index: -1;
+}
 
 // =====================================
 .course{
     width: 100%;
     height: auto;
     padding: 5% 0% 5% 0%;
+    position: relative;
     &.explore{
         background-color: #F8F9FE;
         .title{
             margin-bottom: 4%;
         }
+    }
+    &.university{
+        background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0.98) 10%, rgba(0, 0, 0, 0) 100%);
+        z-index: 99;
     }
     .choose-title{
         font-family: OpenSans-Bold;
@@ -363,6 +414,7 @@ header{
     border-radius: 8px;
     box-shadow: 0px 3px 18px rgba(59, 59, 59, 0.1);
     margin: 10px;
+    background-color: #ffffff;
     .course-img{
         height: 170px;
         border-radius: 8px 8px 0px 0px;
@@ -474,6 +526,7 @@ header{
 #series.owl-theme,
 #creators.owl-theme,
 #media.owl-theme,
+#university.owl-theme,
 #clients.owl-theme,
 #explore.owl-theme {
     .owl-nav{
@@ -515,6 +568,17 @@ header{
     }
 }
 
+#university.owl-theme{
+    .owl-dots .owl-dot{
+        &.active{
+            span{
+                width: 12px;
+                height: 5px;
+                background-color: #ffffff;
+            }
+        }    
+    }
+}
 // =====================================explore
 .explore-slide{
     // margin-top: 1%;
@@ -530,10 +594,12 @@ header{
     perspective: 1000px;
     overflow: hidden;
     @include xsm{
-        margin: 0 auto;
+        // margin: 0 auto;
+        width: 100%;
     }
     @include sm{
-        margin: 0 auto;
+        // margin: 0 auto;
+        width: 100%;
     }
     .explore-box{
         width: 100%;
@@ -587,30 +653,104 @@ header{
     border-radius: 50%;
     margin-top: 4%;
     margin-bottom: 4%;
-    margin-left: 60%;
+    position: relative;
+    left: 60%;
     background-color: #D8DEFA;
 }
-
-
-.btn-more{
-    width: 150px;
-    background: #272A33;
-    outline: none;
-    cursor: pointer;
-    color: #ffffff;
-    font-family: OpenSans-SemiBold;
-    font-size: 14px;
-    height: 38px;
-    border-radius: 5px;
-    margin: 3% 0%;
-    border: 1px solid #FFCF01;
-    border-radius: 100px;
-    // &:focus{
-    //     outline: none;
-        box-shadow: none !important;
-    // }
+.media-circle1{
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    position: absolute;
+    left: 12%;
+    top: 5%;
+    background-color: #DFF6B7;
+}
+.media-circle2{
+    width: 670px;
+    height: 670px;
+    border-radius: 50%;
+    border: 4px solid #D8DEFA;
+    position: absolute;
+    top: -50%;
+    right: 0%;
+    transform: translate(50%, -20%);
+    @include xsm{
+        width: 220px;
+        height: 220px;
+        display: none;
+    }
+}
+.image1{
+    width: 190px;
+    height: auto;
+    position: absolute;
+    right: 0%;
+    top: -25%;
+    z-index: 99;
+    // transform: translate(10%, -10%);
+    &.image2{
+        top: -15%;
+        right: 3%;
+    }
 }
 
+.university-box{
+    padding: 3% 0%;
+    padding-left: 2%;
+    .university-subtitle{
+        color: rgba(255, 255, 255, 0.98);
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+    .university-title{
+        color: rgba(255, 255, 255, 0.98);
+        font-size: 28px;
+        font-family: OpenSans-SemiBold;
+        margin-bottom: 5%;
+        &.university-title2{
+            color: rgba(59, 59, 59, 0.98);
+        }
+    }
+    .university-content{
+        color: rgba(255, 255, 255, 0.98);
+        font-size: 14px;
+        margin-bottom: 6%;
+        line-height: 1.5;
+        &.university-content2{
+            color: rgba(59, 59, 59, 0.98);
+        }
+    }
+    .university-btn{
+        @extend .btn;
+        width: 200px;
+        margin-bottom: 0;
+        font-size: 14px;
+        &.university-btn2{
+            background-color: transparent;
+            border: 1px solid #5D74EA;
+            color: #5D74EA;
+        }
+        i{
+            margin-right: 3px;
+        }
+    }
+}
+
+.discover-video{
+    width: 100%;
+    min-height: 300px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 18px rgba(59, 59, 59, 0.1);
+    
+    video{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+}
 
 @keyframes move{
     0%{
@@ -629,7 +769,6 @@ header{
         width: 0%;
     }
 }
-
 
 
     
@@ -716,7 +855,7 @@ footer{
     position: relative;
     width: 100%;
     height: auto;
-    padding: 2% 0%;
+    padding: 2% 0% 4% 0%;
     background-color: #F8F9FE;
     .footer-heading{
         color: #FCCF23;
